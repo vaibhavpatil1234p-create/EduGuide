@@ -150,30 +150,21 @@ return;
 
 try{
 
-const response=await fetch(
-
+const response = await fetch(
 "https://eduguide-backend-cqwb.onrender.com/api/auth/login",
-
 {
+method: "POST",
 
-method:"POST",
-
-headers:{
-
-"Content-Type":"application/json"
-
+headers: {
+"Content-Type": "application/json"
 },
 
-body:JSON.stringify({
-
+body: JSON.stringify({
 email,
-
 password
-
 })
 
 }
-
 );
 
 
