@@ -87,52 +87,21 @@ document.getElementById("loginCard").style.display="block";
 
 }
 
-
-
-// ================= SIGNUP =================
-
-async function signup(){
-
-const email=document.getElementById("signupEmail").value;
-
-const password=document.getElementById("signupPassword").value;
-
-
-if(email==="" || password===""){
-
-alert("Please fill all fields");
-
-return;
-
-}
-
-
-try{
-
-const response=await fetch(
-
-"https://eduguide-backend-cqwb.onrender.com/api/auth/signup"
-
+const response = await fetch(
+"https://eduguide-backend-cqwb.onrender.com/api/auth/signup",
 {
+method: "POST",
 
-method:"POST",
-
-headers:{
-
-"Content-Type":"application/json"
-
+headers: {
+"Content-Type": "application/json"
 },
 
-body:JSON.stringify({
-
+body: JSON.stringify({
 email,
-
 password
-
 })
 
 }
-
 );
 
 
@@ -183,7 +152,7 @@ try{
 
 const response=await fetch(
 
-"https://eduguide-backend-cqwb.onrender.com/api/auth/login"
+"https://eduguide-backend-cqwb.onrender.com/api/auth/login",
 
 {
 
