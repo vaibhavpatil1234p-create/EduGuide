@@ -111,7 +111,7 @@ try{
 
 const response=await fetch(
 
-"http://localhost:5000/api/auth/signup",
+"https://eduguide-backend-cqwb.onrender.com/api/auth/signup"
 
 {
 
@@ -183,7 +183,7 @@ try{
 
 const response=await fetch(
 
-"http://localhost:5000/api/auth/login",
+"https://eduguide-backend-cqwb.onrender.com/api/auth/login"
 
 {
 
