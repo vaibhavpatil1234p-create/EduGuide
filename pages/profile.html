@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Student Profile</title>
+
+<link rel="stylesheet"
+href="../css/profile.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>👤 Student Profile</h1>
+
+<div class="profile-card">
+
+<!-- Profile Photo -->
+
+<div class="photo-section">
+
+<img
+src="https://i.pravatar.cc/150?img=12"
+id="profileImage">
+
+<input
+type="file"
+id="imageInput">
+
+</div>
+
+
+<!-- Personal Details -->
+
+<h2>Personal Details</h2>
+
+<input
+type="text"
+id="fullName"
+placeholder="Full Name">
+
+<input
+type="email"
+id="email"
+placeholder="Email">
+
+<input
+type="number"
+id="phone"
+placeholder="Phone Number">
+
+<input
+type="text"
+id="city"
+placeholder="City">
+
+<input
+type="text"
+id="state"
+placeholder="State">
+
+
+
+<h2>Academic Details</h2>
+
+<select id="class">
+
+<option>10th</option>
+<option>11th</option>
+<option>12th</option>
+
+</select>
+
+<select id="stream">
+
+<option>PCM</option>
+<option>PCB</option>
+<option>Commerce</option>
+
+</select>
+
+<input
+type="number"
+id="percentage"
+placeholder="Percentage">
+
+
+
+<h2>Career Goals</h2>
+
+<input
+type="text"
+id="dreamCollege"
+placeholder="Dream College">
+
+<input
+type="text"
+id="dreamBranch"
+placeholder="Dream Branch">
+
+<input
+type="text"
+id="interest"
+placeholder="Interest Area">
+
+
+<h2>Entrance Exams</h2>
+
+<div class="exam-box">
+
+<label><input type="checkbox"> JEE Main</label>
+
+<label><input type="checkbox"> JEE Advanced</label>
+
+<label><input type="checkbox"> KCET</label>
+
+<label><input type="checkbox"> COMEDK</label>
+
+<label><input type="checkbox"> NEET</label>
+
+<label><input type="checkbox"> CUET</label>
+
+</div>
+
+
+<button onclick="saveProfile()">
+
+Save Profile
+
+</button>
+
+</div>
+
+</div>
+
+<script src="../js/profile.js"></script>
+
+</body>
+
+</html>
+
+

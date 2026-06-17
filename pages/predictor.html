@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Career Predictor</title>
+
+<link rel="stylesheet"
+href="../css/predictor.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>
+
+🧠 AI Career Predictor
+
+</h1>
+
+<p>
+
+Find the Best Branch and College for Your Future
+
+</p>
+
+<div class="card">
+
+<select id="stream">
+
+<option>PCM</option>
+
+<option>PCB</option>
+
+<option>Commerce</option>
+
+</select>
+
+
+<select id="class">
+
+<option>After 10th</option>
+
+<option>11th</option>
+
+<option>12th</option>
+
+</select>
+
+<select id="exam">
+
+<option>JEE Main</option>
+<option>KCET</option>
+<option>COMEDK</option>
+
+</select>
+
+<input
+type="number"
+id="rank"
+placeholder="Enter JEE/KCET/COMEDK Rank">
+
+
+<input
+type="number"
+id="budget"
+placeholder="Budget (Lakhs)">
+
+
+<input
+type="text"
+id="state"
+placeholder="Preferred State">
+
+
+<input
+type="text"
+id="interest"
+placeholder="Interest Area">
+
+
+<button onclick="predictCareer()">
+
+Generate Recommendation
+
+</button>
+
+</div>
+
+
+
+<div class="result">
+
+<h2>
+
+Recommended Branch
+
+</h2>
+
+<h1 id="branch">
+
+AI & ML
+
+</h1>
+
+
+<h2>
+
+Recommended Colleges
+
+</h2>
+
+<p id="college">
+
+IIT Bombay
+
+<br>
+
+BITS Pilani
+
+<br>
+
+IIIT Hyderabad
+
+</p>
+
+
+<h2>
+
+Average Package
+
+</h2>
+
+<h1 id="package">
+
+₹22 LPA
+
+</h1>
+
+</div>
+
+<script src="../js/predictor.js"></script>
+
+</body>
+
+</html>
+

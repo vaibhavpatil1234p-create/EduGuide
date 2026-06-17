@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EduGuide</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+
+<!-- LEFT SIDE -->
+
+<div class="left">
+
+<h1>EduGuide 🎓</h1>
+
+<h2>
+
+Find the Right College,
+Shape the Right Future.
+
+</h2>
+
+<p>
+
+Your Personal College and Career Companion
+
+</p>
+
+<img
+
+src="https://cdni.iconscout.com/illustration/premium/thumb/student-studying-online-4268363-3551761.png"
+
+class="hero-image">
+
+</div>
+
+
+
+<!-- RIGHT SIDE -->
+
+<div class="right">
+
+
+<!-- LOGIN CARD -->
+
+<div class="card" id="loginCard">
+
+<h2>
+
+Welcome Back 👋
+
+</h2>
+
+<input
+type="email"
+id="loginEmail"
+placeholder="Email">
+
+<div class="password-box">
+
+<input
+type="password"
+id="loginPassword"
+placeholder="Password">
+
+<i
+class="fa-solid fa-eye"
+onclick="togglePassword()"></i>
+
+</div>
+
+<p>
+
+Password Strength :
+
+<span id="strengthText">
+
+Weak
+
+</span>
+
+</p>
+
+<button onclick="login()">
+
+Login
+
+</button>
+
+<p>
+
+Don't have an account?
+
+<span onclick="showSignup()">
+
+Sign Up
+
+</span>
+
+</p>
+
+</div>
+
+
+
+<!-- SIGNUP CARD -->
+
+<div class="card" id="signupCard">
+
+<h2>
+
+Create Account 🚀
+
+</h2>
+
+<input
+type="email"
+id="signupEmail"
+placeholder="Email">
+
+<input
+type="password"
+id="signupPassword"
+placeholder="Password">
+
+<button onclick="signup()">
+
+Create Account
+
+</button>
+
+<p>
+
+Already have an account?
+
+<span onclick="showLogin()">
+
+Login
+
+</span>
+
+</p>
+
+</div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
+
+

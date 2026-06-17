@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>EduGuide Dashboard</title>
+
+<link rel="stylesheet"
+href="../css/dashboard.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h1>EduGuide 🎓</h1>
+
+<ul>
+
+<li onclick="window.location.href='dashboard.html'">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</li>
+
+<li onclick="window.location.href='colleges.html'">
+<i class="fa-solid fa-building-columns"></i>
+Top Colleges
+</li>
+
+<li onclick="window.location.href='predictor.html'">
+<i class="fa-solid fa-brain"></i>
+Career Predictor
+</li>
+
+<li onclick="window.location.href='predictor.html'">
+<i class="fa-solid fa-chart-line"></i>
+Cutoff Predictor
+</li>
+
+<li onclick="window.location.href='placements.html'">
+<i class="fa-solid fa-briefcase"></i>
+Placements
+</li>
+
+<li onclick="window.location.href='scholarships.html'">
+<i class="fa-solid fa-trophy"></i>
+Scholarships
+</li>
+
+<li onclick="window.location.href='ai.html'">
+<i class="fa-solid fa-robot"></i>
+AI Counsellor
+</li>
+
+<li onclick="window.location.href='favorites.html'">
+<i class="fa-solid fa-heart"></i>
+Favorites
+</li>
+
+<li onclick="window.location.href='profile.html'">
+<i class="fa-solid fa-user"></i>
+Profile
+</li>
+
+<li onclick="window.location.href='settings.html'">
+<i class="fa-solid fa-gear"></i>
+Settings
+</li>
+
+<li onclick="logout()">
+<i class="fa-solid fa-right-from-bracket"></i>
+Logout
+</li>
+
+</ul>
+
+</div>
+
+
+
+<!-- Main -->
+
+<div class="main">
+
+<div class="topbar">
+
+<input
+type="text"
+placeholder="Search colleges, branches, exams...">
+
+<div class="icons">
+
+<i class="fa-solid fa-bell"></i>
+
+<button id="theme-toggle">
+
+🌙
+
+</button>
+
+<img
+src="https://i.pravatar.cc/150?img=12"
+class="avatar"
+onclick="window.location.href='profile.html'">
+
+</div>
+
+</div>
+
+
+
+<!-- Hero -->
+
+<div class="hero">
+
+<div>
+
+<h1>
+
+Good Evening, Vaibhav 👋
+
+</h1>
+
+<p>
+
+Find Your Dream College and Build Your Future
+
+</p>
+
+</div>
+
+<img
+
+src="https://cdni.iconscout.com/illustration/premium/thumb/student-studying-online-4268363-3551761.png"
+
+class="hero-image">
+
+</div>
+
+
+<!-- Statistics -->
+
+<div class="stats">
+
+<div class="stat-card">
+
+<h1>15000+</h1>
+
+<p>Colleges</p>
+
+</div>
+
+<div class="stat-card">
+
+<h1>300+</h1>
+
+<p>Branches</p>
+
+</div>
+
+<div class="stat-card">
+
+<h1>500+</h1>
+
+<p>Scholarships</p>
+
+</div>
+
+<div class="stat-card">
+
+<h1>50000+</h1>
+
+<p>Placement Data</p>
+
+</div>
+
+</div>
+
+
+
+<!-- Feature Cards -->
+
+<div class="cards">
+
+<!-- Top Colleges -->
+
+<div class="card">
+
+<h2>🎓 Top Colleges</h2>
+
+<h3>IIT Bombay</h3>
+
+<p>
+
+⭐ NIRF Rank #1
+
+<br>
+
+💰 Average Package ₹36 LPA
+
+<br>
+
+📍 Mumbai
+
+</p>
+
+<button onclick="window.location.href='colleges.html'">
+
+Explore
+
+</button>
+
+</div>
+
+
+
+<!-- Career Predictor -->
+
+<div class="card">
+
+<h2>🧠 Career Predictor</h2>
+
+<p>
+
+AI-powered recommendations for
+
+11th & 12th students.
+
+</p>
+
+<button onclick="window.location.href='predictor.html'">
+
+Explore
+
+</button>
+
+</div>
+
+
+
+<!-- AI Counsellor -->
+
+<div class="card">
+
+<h2>🤖 AI Counsellor</h2>
+
+<p>
+
+Ask EduGuide AI anything.
+
+</p>
+
+<button onclick="window.location.href='ai.html'">
+
+Open AI
+
+</button>
+
+</div>
+
+
+
+<!-- Scholarships -->
+
+<div class="card">
+
+<h2>🏆 Scholarships</h2>
+
+<p>
+
+Explore Central and State Scholarships.
+
+</p>
+
+<button onclick="window.location.href='scholarships.html'">
+
+View
+
+</button>
+
+</div>
+
+
+
+<!-- Placements -->
+
+<div class="card">
+
+<h2>💼 Placement Analytics</h2>
+
+<p>
+
+Highest Packages
+
+<br>
+
+Average Packages
+
+<br>
+
+Branch-wise Statistics
+
+</p>
+
+<button onclick="window.location.href='placements.html'">
+
+View Analytics
+
+</button>
+
+</div>
+
+
+
+<!-- Trending Branches -->
+
+<div class="card">
+
+<h2>📚 Trending Branches</h2>
+
+<p>
+
+AI & ML
+
+<br>
+
+Cyber Security
+
+<br>
+
+Data Science
+
+<br>
+
+Robotics
+
+</p>
+
+<button>
+
+Explore Branches
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="../js/dashboard.js"></script>
+
+<script>
+
+const toggle=document.getElementById("theme-toggle");
+
+toggle.onclick=()=>{
+
+document.body.classList.toggle("light-mode");
+
+if(document.body.classList.contains("light-mode")){
+
+toggle.innerHTML="☀️";
+
+}
+
+else{
+
+toggle.innerHTML="🌙";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
+
