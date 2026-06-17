@@ -1,39 +1,38 @@
 console.log("SCRIPT FILE LOADED");
 
-
 // ================= PASSWORD STRENGTH =================
 
 const loginPassword = document.getElementById("loginPassword");
 
-if(loginPassword){
+if (loginPassword) {
 
-loginPassword.addEventListener("input",()=>{
+loginPassword.addEventListener("input", () => {
 
-let value=loginPassword.value;
+let value = loginPassword.value;
 
-let strength=document.getElementById("strengthText");
+let strength = document.getElementById("strengthText");
 
-if(value.length<6){
+if (value.length < 6) {
 
-strength.innerHTML="Weak 🟥";
+strength.innerHTML = "Weak 🟥";
 
-strength.style.color="red";
-
-}
-
-else if(value.length<10){
-
-strength.innerHTML="Medium 🟨";
-
-strength.style.color="orange";
+strength.style.color = "red";
 
 }
 
-else{
+else if (value.length < 10) {
 
-strength.innerHTML="Strong 🟩";
+strength.innerHTML = "Medium 🟨";
 
-strength.style.color="lightgreen";
+strength.style.color = "orange";
+
+}
+
+else {
+
+strength.innerHTML = "Strong 🟩";
+
+strength.style.color = "lightgreen";
 
 }
 
@@ -45,19 +44,19 @@ strength.style.color="lightgreen";
 
 // ================= SHOW PASSWORD =================
 
-function togglePassword(){
+function togglePassword() {
 
-let pass=document.getElementById("loginPassword");
+let pass = document.getElementById("loginPassword");
 
-if(pass.type==="password"){
+if (pass.type === "password") {
 
-pass.type="text";
+pass.type = "text";
 
 }
 
-else{
+else {
 
-pass.type="password";
+pass.type = "password";
 
 }
 
@@ -67,11 +66,11 @@ pass.type="password";
 
 // ================= SHOW SIGNUP =================
 
-function showSignup(){
+function showSignup() {
 
-document.getElementById("loginCard").style.display="none";
+document.getElementById("loginCard").style.display = "none";
 
-document.getElementById("signupCard").style.display="block";
+document.getElementById("signupCard").style.display = "block";
 
 }
 
@@ -79,13 +78,33 @@ document.getElementById("signupCard").style.display="block";
 
 // ================= SHOW LOGIN =================
 
-function showLogin(){
+function showLogin() {
 
-document.getElementById("signupCard").style.display="none";
+document.getElementById("signupCard").style.display = "none";
 
-document.getElementById("loginCard").style.display="block";
+document.getElementById("loginCard").style.display = "block";
 
 }
+
+
+
+// ================= SIGNUP =================
+
+async function signup() {
+
+const email = document.getElementById("signupEmail").value;
+
+const password = document.getElementById("signupPassword").value;
+
+if (email === "" || password === "") {
+
+alert("Please fill all fields");
+
+return;
+
+}
+
+try {
 
 const response = await fetch(
 "https://eduguide-backend-cqwb.onrender.com/api/auth/signup",
@@ -104,21 +123,19 @@ password
 }
 );
 
-
-const data=await response.json();
+const data = await response.json();
 
 alert(data.message || data.error);
 
+if (response.ok) {
 
-if(response.ok){
-
-window.location.href="pages/profile.html";
-
-}
+window.location.href = "pages/profile.html";
 
 }
 
-catch(err){
+}
+
+catch (err) {
 
 console.log(err);
 
@@ -132,14 +149,13 @@ alert("Server Error");
 
 // ================= LOGIN =================
 
-async function login(){
+async function login() {
 
-const email=document.getElementById("loginEmail").value;
+const email = document.getElementById("loginEmail").value;
 
-const password=document.getElementById("loginPassword").value;
+const password = document.getElementById("loginPassword").value;
 
-
-if(email==="" || password===""){
+if (email === "" || password === "") {
 
 alert("Please fill all fields");
 
@@ -147,8 +163,7 @@ return;
 
 }
 
-
-try{
+try {
 
 const response = await fetch(
 "https://eduguide-backend-cqwb.onrender.com/api/auth/login",
@@ -167,27 +182,22 @@ password
 }
 );
 
+const data = await response.json();
 
-const data=await response.json();
-
-
-if(response.ok){
+if (response.ok) {
 
 localStorage.setItem(
-
 "token",
-
 data.token
-
 );
 
 alert("Login Successful 🚀");
 
-window.location.href="pages/dashboard.html";
+window.location.href = "pages/dashboard.html";
 
 }
 
-else{
+else {
 
 alert(data.error);
 
@@ -195,7 +205,7 @@ alert(data.error);
 
 }
 
-catch(err){
+catch (err) {
 
 console.log(err);
 
