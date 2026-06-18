@@ -1,148 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Scholarships</title>
-
-<link rel="stylesheet"
-href="../css/scholarships.css">
-
-<link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGuide - Scholarships</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/scholarships.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-<div class="container">
-
-<h1>🏆 Scholarships</h1>
-
-<div class="cards">
-
-<!-- NSP -->
-
-<div class="card">
-
-<h2>National Scholarship Portal</h2>
-
-<p>
-
-💰 Amount : ₹10,000 - ₹50,000
-
-<br><br>
-
-🎯 Eligibility :
-
-Class 11,12 and UG Students
-
-</p>
-
-<button>
-
-Apply Now
-
-</button>
-
-</div>
-
-
-
-<!-- Pragati -->
-
-<div class="card">
-
-<h2>Pragati Scholarship</h2>
-
-<p>
-
-💰 Amount : ₹50,000
-
-<br><br>
-
-🎯 Eligibility :
-
-Girls pursuing Technical Education
-
-</p>
-
-<button>
-
-Apply Now
-
-</button>
-
-</div>
-
-
-
-<!-- Central Sector -->
-
-<div class="card">
-
-<h2>Central Sector Scholarship</h2>
-
-<p>
-
-💰 Amount : ₹20,000 Per Year
-
-<br><br>
-
-🎯 Eligibility :
-
-Students with 80%+
-
-</p>
-
-<button>
-
-Apply Now
-
-</button>
-
-</div>
-
-
-
-<!-- State -->
-
-<div class="card">
-
-<h2>State Scholarships</h2>
-
-<p>
-
-💰 Amount : ₹10,000 - ₹40,000
-
-<br><br>
-
-🎯 Eligibility :
-
-Based on State Government Schemes
-
-</p>
-
-<button>
-
-Apply Now
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<script src="../js/scholarships.js"></script>
-
+    <div class="app-container">
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <button id="sidebar-toggle" class="sidebar-toggle-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="mobile-brand">
+                <i class="fa-solid fa-graduation-cap brand-logo"></i>
+                <span>EduGuide</span>
+            </div>
+            <img src="https://i.pravatar.cc/150?img=12" class="avatar-mobile" alt="Profile">
+        </div>
+
+        <!-- Sidebar Navigation (Consistent) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-graduation-cap logo-icon"></i>
+                <span class="logo-text">EduGuide</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li onclick="window.location.href='dashboard.html'">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li onclick="window.location.href='colleges.html'">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span>Top Colleges</span>
+                    </li>
+                    <li onclick="window.location.href='predictor.html'">
+                        <i class="fa-solid fa-brain"></i>
+                        <span>Career Predictor</span>
+                    </li>
+                    <li onclick="window.location.href='placements.html'">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <span>Placements</span>
+                    </li>
+                    <li class="active" onclick="window.location.href='scholarships.html'">
+                        <i class="fa-solid fa-trophy"></i>
+                        <span>Scholarships</span>
+                    </li>
+                    <li onclick="alert('AI Counsellor chatbot coming soon!')">
+                        <i class="fa-solid fa-robot"></i>
+                        <span>AI Counsellor</span>
+                    </li>
+                    <li onclick="alert('Your favorites list is currently empty!')">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Favorites</span>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://i.pravatar.cc/150?img=12" alt="Avatar" class="profile-avatar">
+                    <div class="profile-info">
+                        <span class="profile-name" id="userNameDisplay">Vaibhav</span>
+                        <span class="profile-role">Student</span>
+                    </div>
+                </div>
+                <button onclick="logout()" class="btn-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header/Topbar (Consistent) -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search scholarships by name, funding type...">
+                </div>
+                
+                <div class="topbar-actions">
+                    <button class="icon-btn tooltip" data-tooltip="Notifications">
+                        <i class="fa-solid fa-bell"></i>
+                    </button>
+                    
+                    <button id="theme-toggle" class="theme-toggle-btn tooltip" data-tooltip="Toggle Theme">
+                        <i class="fa-solid fa-moon moon-icon"></i>
+                        <i class="fa-solid fa-sun sun-icon"></i>
+                    </button>
+                    
+                    <img src="https://i.pravatar.cc/150?img=12" alt="Avatar" class="avatar-topbar">
+                </div>
+            </header>
+
+            <div class="content-scroll">
+                <!-- Title banner -->
+                <section class="page-title-section">
+                    <h1>🏆 National & State Scholarships</h1>
+                    <p>Discover financial aid schemes, eligibility parameters, and application portals.</p>
+                </section>
+
+                <!-- Filter Controls -->
+                <section class="filters-row">
+                    <button class="filter-tag active" onclick="filterScholarships('all', this)">All Schemes</button>
+                    <button class="filter-tag" onclick="filterScholarships('national', this)">National Level</button>
+                    <button class="filter-tag" onclick="filterScholarships('girls', this)">Girls Support</button>
+                    <button class="filter-tag" onclick="filterScholarships('merit', this)">Merit Based</button>
+                    <button class="filter-tag" onclick="filterScholarships('state', this)">State Level</button>
+                </section>
+
+                <!-- Cards Grid -->
+                <section class="scholarships-grid" id="scholarshipsGrid">
+                    <!-- NSP -->
+                    <div class="sch-card" data-category="national">
+                        <div class="sch-header">
+                            <span class="sch-tag tag-blue">National</span>
+                            <span class="sch-deadline">Apply by: 30 Nov</span>
+                        </div>
+                        <h3>National Scholarship Portal (NSP)</h3>
+                        <div class="sch-details">
+                            <div class="sch-detail-item">
+                                <span class="sch-lbl">Funding Amount</span>
+                                <span class="sch-val">₹10,000 - ₹50,000</span>
+                            </div>
+                            <div class="sch-detail-item">
+                                <span class="sch-lbl">Target Group</span>
+                                <span class="sch-val">Class 11, 12 and UG Students</span>
+                            </div>
+                        </div>
+                        <button class="btn-apply" onclick="openApplyModal('National Scholarship Portal')">Apply Now</button>
+                    </div>
+
+                    <!-- Pragati -->
+                    <div class="sch-card" data-category="girls">
+                        <div class="sch-header">
+                            <span class="sch-tag tag-pink">AICTE / Girls</span>
+                            <span class="sch-deadline">Apply by: 15 Dec</span>
+                        </div>
+                        <h3>Pragati Scholarship Scheme</h3>
+                        <div class="sch-details">
+                            <div class="sch-detail-item">
+                                <span class="sch-lbl">Funding Amount</span>
+                                <span class="sch-val">₹50,000 Per Year</span>
+                            </div>
+                            <div class="sch-detail-item">
+                                <span class="sch-lbl">Target Group</span>
+                                <span class="sch-val">Girls pursuing Technical Degrees</span>
+                            </div>
+                        </div>
+                        <button class="btn-apply" onclick="openApplyModal('Pragati Scholarship Scheme')">Apply Now</button>
+                    </div>
+
+                    <!-- Central Sector -->
+                    <div class="sch-card" data-category="merit">
+                        <div class="sch-header">
+                            <span class="sch-tag tag-purple">Merit Based</span>
+                            <span class="sch-deadline">Apply by: 20 Dec</span>
+                        </div>
+                        <h3>Central Sector Scholarship</h3>
+                        <div class="sch-details">
+                            <div class="sch-detail-item">
+                                <span class="sch-lbl">Funding Amount</span>
+                                <span class="sch-val">₹20,000 Per Year</span>
+                            </div>
+                            <div class="sch-detail-item">
+                                <span class="sch-lbl">Target Group</span>
+                                <span class="sch-val">Students with 80%+ in Board Exams</span>
+                            </div>
+                        </div>
+                        <button class="btn-apply" onclick="openApplyModal('Central Sector Scholarship')">Apply Now</button>
+                    </div>
+
+                    <!-- State -->
+                    <div class="sch-card" data-category="state">
+                        <div class="sch-header">
+                            <span class="sch-tag tag-orange">State Sponsored</span>
+                            <span class="sch-deadline">Apply by: 10 Jan</span>
+                        </div>
+                        <h3>Karnataka State Scholarship (SSP)</h3>
+                        <div class="sch-details">
+                            <div class="sch-detail-item">
+                                <span class="sch-lbl">Funding Amount</span>
+                                <span class="sch-val">₹10,000 - ₹40,000</span>
+                            </div>
+                            <div class="sch-detail-item">
+                                <span class="sch-lbl">Target Group</span>
+                                <span class="sch-val">Karnataka Domicile / Category</span>
+                            </div>
+                        </div>
+                        <button class="btn-apply" onclick="openApplyModal('SSP Scholarship')">Apply Now</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Apply Scholarship Modal -->
+    <div class="modal-overlay" id="applyModal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeApplyModal()">&times;</button>
+            <div class="modal-body">
+                <div class="apply-header">
+                    <i class="fa-solid fa-file-signature apply-icon"></i>
+                    <h2>Scholarship Application Form</h2>
+                    <p>Apply for: <span id="schNamePlaceholder" class="apply-sch-name"></span></p>
+                </div>
+
+                <!-- Form Section -->
+                <form id="applyForm" onsubmit="event.preventDefault(); submitApplication();" class="apply-form">
+                    <div class="form-group">
+                        <label for="applyName">Full Name</label>
+                        <input type="text" id="applyName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="applyEmail">Email Address</label>
+                        <input type="email" id="applyEmail" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="applyMarks">Class 12th Board Score (%)</label>
+                            <input type="number" id="applyMarks" min="50" max="100" placeholder="e.g. 88" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="applyIncome">Family Annual Income (INR)</label>
+                            <input type="number" id="applyIncome" placeholder="e.g. 450000" required>
+                        </div>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label class="terms-chk">
+                            <input type="checkbox" required>
+                            <span class="checkbox-custom"></span>
+                            I verify that all entered academic and income marks are genuine.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-submit-apply">Submit Application</button>
+                </form>
+
+                <!-- Success Section (Hidden initially) -->
+                <div class="apply-success-box" id="applySuccess">
+                    <i class="fa-solid fa-circle-check success-check-icon"></i>
+                    <h2>Application Submitted!</h2>
+                    <p>Your profile matches the threshold rules. The funding portal will notify you at: <strong id="successMail"></strong></p>
+                    <button class="btn-primary" onclick="closeApplyModal()">Close Dialog</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/scholarships.js"></script>
 </body>
-
 </html>

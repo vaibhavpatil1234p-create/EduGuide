@@ -1,185 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Placement Analytics</title>
-
-<link rel="stylesheet"
-href="../css/placements.css">
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGuide - Placement Analytics</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/placements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body>
-
-<div class="container">
-
-<h1>
-
-📊 Placement Analytics Dashboard
-
-</h1>
-
-
-<!-- TOP STATS -->
-
-<div class="stats">
-
-<div class="stat-card">
-
-<h2>₹56 LPA</h2>
-
-<p>Highest Package</p>
-
-</div>
-
-<div class="stat-card">
-
-<h2>₹22 LPA</h2>
-
-<p>Average Package</p>
-
-</div>
-
-<div class="stat-card">
-
-<h2>96%</h2>
-
-<p>Placement Rate</p>
-
-</div>
-
-<div class="stat-card">
-
-<h2>500+</h2>
-
-<p>Recruiters</p>
-
-</div>
-
-</div>
-
-
-
-<!-- PACKAGE GRAPH -->
-
-<div class="chart-card">
-
-<h2>
-
-Branch-wise Average Package
-
-</h2>
-
-<canvas id="packageChart">
-
-</canvas>
-
-</div>
-
-
-
-<!-- YEAR GRAPH -->
-
-<div class="chart-card">
-
-<h2>
-
-Year-wise Comparison
-
-</h2>
-
-<canvas id="yearChart">
-
-</canvas>
-
-</div>
-
-
-
-<!-- TOP RECRUITERS -->
-
-<div class="recruiters">
-
-<h2>
-
-🌍 Top Recruiters
-
-</h2>
-
-<div class="recruiter-cards">
-
-<div class="company">
-
-Google
-
-</div>
-
-<div class="company">
-
-Microsoft
-
-</div>
-
-<div class="company">
-
-Amazon
-
-</div>
-
-<div class="company">
-
-Nvidia
-
-</div>
-
-<div class="company">
-
-Adobe
-
-</div>
-
-<div class="company">
-
-Goldman Sachs
-
-</div>
-
-<div class="company">
-
-Samsung
-
-</div>
-
-<div class="company">
-
-JP Morgan
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<script src="../js/placements.js"></script>
-
+    <div class="app-container">
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <button id="sidebar-toggle" class="sidebar-toggle-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="mobile-brand">
+                <i class="fa-solid fa-graduation-cap brand-logo"></i>
+                <span>EduGuide</span>
+            </div>
+            <img src="https://i.pravatar.cc/150?img=12" class="avatar-mobile" alt="Profile">
+        </div>
+
+        <!-- Sidebar Navigation (Consistent) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-graduation-cap logo-icon"></i>
+                <span class="logo-text">EduGuide</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li onclick="window.location.href='dashboard.html'">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li onclick="window.location.href='colleges.html'">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span>Top Colleges</span>
+                    </li>
+                    <li onclick="window.location.href='predictor.html'">
+                        <i class="fa-solid fa-brain"></i>
+                        <span>Career Predictor</span>
+                    </li>
+                    <li class="active" onclick="window.location.href='placements.html'">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <span>Placements</span>
+                    </li>
+                    <li onclick="window.location.href='scholarships.html'">
+                        <i class="fa-solid fa-trophy"></i>
+                        <span>Scholarships</span>
+                    </li>
+                    <li onclick="alert('AI Counsellor chatbot coming soon!')">
+                        <i class="fa-solid fa-robot"></i>
+                        <span>AI Counsellor</span>
+                    </li>
+                    <li onclick="alert('Your favorites list is currently empty!')">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Favorites</span>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://i.pravatar.cc/150?img=12" alt="Avatar" class="profile-avatar">
+                    <div class="profile-info">
+                        <span class="profile-name" id="userNameDisplay">Vaibhav</span>
+                        <span class="profile-role">Student</span>
+                    </div>
+                </div>
+                <button onclick="logout()" class="btn-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header/Topbar (Consistent) -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search placements, recruiters...">
+                </div>
+                
+                <div class="topbar-actions">
+                    <button class="icon-btn tooltip" data-tooltip="Notifications">
+                        <i class="fa-solid fa-bell"></i>
+                    </button>
+                    
+                    <button id="theme-toggle" class="theme-toggle-btn tooltip" data-tooltip="Toggle Theme">
+                        <i class="fa-solid fa-moon moon-icon"></i>
+                        <i class="fa-solid fa-sun sun-icon"></i>
+                    </button>
+                    
+                    <img src="https://i.pravatar.cc/150?img=12" alt="Avatar" class="avatar-topbar">
+                </div>
+            </header>
+
+            <div class="content-scroll">
+                <!-- Title banner -->
+                <section class="page-title-section">
+                    <h1>📊 Placement Analytics Dashboard</h1>
+                    <p>Track recruitment curves, highest packages, and company hiring trends.</p>
+                </section>
+
+                <!-- Stats grid -->
+                <section class="stats-grid">
+                    <div class="stat-card green-glow">
+                        <span class="stat-label-p">Highest Package</span>
+                        <h2 class="stat-number-p">₹56 LPA</h2>
+                        <span class="stat-growth-p"><i class="fa-solid fa-arrow-trend-up"></i> +12% YoY</span>
+                    </div>
+                    <div class="stat-card blue-glow">
+                        <span class="stat-label-p">Average Package</span>
+                        <h2 class="stat-number-p">₹22 LPA</h2>
+                        <span class="stat-growth-p"><i class="fa-solid fa-arrow-trend-up"></i> +8.5% YoY</span>
+                    </div>
+                    <div class="stat-card purple-glow">
+                        <span class="stat-label-p">Placement Rate</span>
+                        <h2 class="stat-number-p">96%</h2>
+                        <span class="stat-growth-p">National Peak</span>
+                    </div>
+                    <div class="stat-card amber-glow">
+                        <span class="stat-label-p">Recruiting Partners</span>
+                        <h2 class="stat-number-p">500+</h2>
+                        <span class="stat-growth-p">Global companies</span>
+                    </div>
+                </section>
+
+                <!-- Chart row -->
+                <section class="charts-row">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Branch-wise Average Package (LPA)</h3>
+                            <p>Average offer comparisons across engineering streams</p>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="packageChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3>Year-wise Growth Trend</h3>
+                            <p>Growth comparison of highest and average packages (LPA)</p>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="yearChart"></canvas>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Top Recruiters Wall -->
+                <section class="recruiters-section">
+                    <div class="section-header">
+                        <h2>🌍 Elite Recruiting Partners</h2>
+                        <p>Our students are regularly hired by top multinational corporations</p>
+                    </div>
+
+                    <div class="recruiters-grid">
+                        <div class="recruiter-box"><i class="fa-brands fa-google google-color"></i> Google</div>
+                        <div class="recruiter-box"><i class="fa-brands fa-microsoft microsoft-color"></i> Microsoft</div>
+                        <div class="recruiter-box"><i class="fa-brands fa-amazon amazon-color"></i> Amazon</div>
+                        <div class="recruiter-box"><i class="fa-solid fa-microchip nvidia-color"></i> Nvidia</div>
+                        <div class="recruiter-box"><i class="fa-brands fa-apple apple-color"></i> Apple</div>
+                        <div class="recruiter-box"><i class="fa-solid fa-building-columns gs-color"></i> Goldman Sachs</div>
+                        <div class="recruiter-box"><i class="fa-solid fa-square-envelope samsung-color"></i> Samsung</div>
+                        <div class="recruiter-box"><i class="fa-solid fa-money-bill-transfer jpm-color"></i> JP Morgan</div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/placements.js"></script>
 </body>
-
 </html>
-

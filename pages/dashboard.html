@@ -1,394 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>EduGuide Dashboard</title>
-
-<link rel="stylesheet"
-href="../css/dashboard.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGuide - Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-<!-- Sidebar -->
-
-<div class="sidebar">
-
-<h1>EduGuide 🎓</h1>
-
-<ul>
-
-<li onclick="window.location.href='dashboard.html'">
-<i class="fa-solid fa-house"></i>
-Dashboard
-</li>
-
-<li onclick="window.location.href='colleges.html'">
-<i class="fa-solid fa-building-columns"></i>
-Top Colleges
-</li>
-
-<li onclick="window.location.href='predictor.html'">
-<i class="fa-solid fa-brain"></i>
-Career Predictor
-</li>
-
-<li onclick="window.location.href='predictor.html'">
-<i class="fa-solid fa-chart-line"></i>
-Cutoff Predictor
-</li>
-
-<li onclick="window.location.href='placements.html'">
-<i class="fa-solid fa-briefcase"></i>
-Placements
-</li>
-
-<li onclick="window.location.href='scholarships.html'">
-<i class="fa-solid fa-trophy"></i>
-Scholarships
-</li>
-
-<li onclick="window.location.href='ai.html'">
-<i class="fa-solid fa-robot"></i>
-AI Counsellor
-</li>
-
-<li onclick="window.location.href='favorites.html'">
-<i class="fa-solid fa-heart"></i>
-Favorites
-</li>
-
-<li onclick="window.location.href='profile.html'">
-<i class="fa-solid fa-user"></i>
-Profile
-</li>
-
-<li onclick="window.location.href='settings.html'">
-<i class="fa-solid fa-gear"></i>
-Settings
-</li>
-
-<li onclick="logout()">
-<i class="fa-solid fa-right-from-bracket"></i>
-Logout
-</li>
-
-</ul>
-
-</div>
-
-
-
-<!-- Main -->
-
-<div class="main">
-
-<div class="topbar">
-
-<input
-type="text"
-placeholder="Search colleges, branches, exams...">
-
-<div class="icons">
-
-<i class="fa-solid fa-bell"></i>
-
-<button id="theme-toggle">
-
-🌙
-
-</button>
-
-<img
-src="https://i.pravatar.cc/150?img=12"
-class="avatar"
-onclick="window.location.href='profile.html'">
-
-</div>
-
-</div>
-
-
-
-<!-- Hero -->
-
-<div class="hero">
-
-<div>
-
-<h1>
-
-Good Evening, Vaibhav 👋
-
-</h1>
-
-<p>
-
-Find Your Dream College and Build Your Future
-
-</p>
-
-</div>
-
-<img
-
-src="https://cdni.iconscout.com/illustration/premium/thumb/student-studying-online-4268363-3551761.png"
-
-class="hero-image">
-
-</div>
-
-
-<!-- Statistics -->
-
-<div class="stats">
-
-<div class="stat-card">
-
-<h1>15000+</h1>
-
-<p>Colleges</p>
-
-</div>
-
-<div class="stat-card">
-
-<h1>300+</h1>
-
-<p>Branches</p>
-
-</div>
-
-<div class="stat-card">
-
-<h1>500+</h1>
-
-<p>Scholarships</p>
-
-</div>
-
-<div class="stat-card">
-
-<h1>50000+</h1>
-
-<p>Placement Data</p>
-
-</div>
-
-</div>
-
-
-
-<!-- Feature Cards -->
-
-<div class="cards">
-
-<!-- Top Colleges -->
-
-<div class="card">
-
-<h2>🎓 Top Colleges</h2>
-
-<h3>IIT Bombay</h3>
-
-<p>
-
-⭐ NIRF Rank #1
-
-<br>
-
-💰 Average Package ₹36 LPA
-
-<br>
-
-📍 Mumbai
-
-</p>
-
-<button onclick="window.location.href='colleges.html'">
-
-Explore
-
-</button>
-
-</div>
-
-
-
-<!-- Career Predictor -->
-
-<div class="card">
-
-<h2>🧠 Career Predictor</h2>
-
-<p>
-
-AI-powered recommendations for
-
-11th & 12th students.
-
-</p>
-
-<button onclick="window.location.href='predictor.html'">
-
-Explore
-
-</button>
-
-</div>
-
-
-
-<!-- AI Counsellor -->
-
-<div class="card">
-
-<h2>🤖 AI Counsellor</h2>
-
-<p>
-
-Ask EduGuide AI anything.
-
-</p>
-
-<button onclick="window.location.href='ai.html'">
-
-Open AI
-
-</button>
-
-</div>
-
-
-
-<!-- Scholarships -->
-
-<div class="card">
-
-<h2>🏆 Scholarships</h2>
-
-<p>
-
-Explore Central and State Scholarships.
-
-</p>
-
-<button onclick="window.location.href='scholarships.html'">
-
-View
-
-</button>
-
-</div>
-
-
-
-<!-- Placements -->
-
-<div class="card">
-
-<h2>💼 Placement Analytics</h2>
-
-<p>
-
-Highest Packages
-
-<br>
-
-Average Packages
-
-<br>
-
-Branch-wise Statistics
-
-</p>
-
-<button onclick="window.location.href='placements.html'">
-
-View Analytics
-
-</button>
-
-</div>
-
-
-
-<!-- Trending Branches -->
-
-<div class="card">
-
-<h2>📚 Trending Branches</h2>
-
-<p>
-
-AI & ML
-
-<br>
-
-Cyber Security
-
-<br>
-
-Data Science
-
-<br>
-
-Robotics
-
-</p>
-
-<button>
-
-Explore Branches
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<script src="../js/dashboard.js"></script>
-
-<script>
-
-const toggle=document.getElementById("theme-toggle");
-
-toggle.onclick=()=>{
-
-document.body.classList.toggle("light-mode");
-
-if(document.body.classList.contains("light-mode")){
-
-toggle.innerHTML="☀️";
-
-}
-
-else{
-
-toggle.innerHTML="🌙";
-
-}
-
-}
-
-</script>
-
+    <div class="app-container">
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <button id="sidebar-toggle" class="sidebar-toggle-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="mobile-brand">
+                <i class="fa-solid fa-graduation-cap brand-logo"></i>
+                <span>EduGuide</span>
+            </div>
+            <img src="https://i.pravatar.cc/150?img=12" class="avatar-mobile" alt="Profile">
+        </div>
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-graduation-cap logo-icon"></i>
+                <span class="logo-text">EduGuide</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active" onclick="window.location.href='dashboard.html'">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li onclick="window.location.href='colleges.html'">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span>Top Colleges</span>
+                    </li>
+                    <li onclick="window.location.href='predictor.html'">
+                        <i class="fa-solid fa-brain"></i>
+                        <span>Career Predictor</span>
+                    </li>
+                    <li onclick="window.location.href='placements.html'">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <span>Placements</span>
+                    </li>
+                    <li onclick="window.location.href='scholarships.html'">
+                        <i class="fa-solid fa-trophy"></i>
+                        <span>Scholarships</span>
+                    </li>
+                    <li onclick="alert('AI Counsellor chatbot coming soon!')">
+                        <i class="fa-solid fa-robot"></i>
+                        <span>AI Counsellor</span>
+                    </li>
+                    <li onclick="alert('Your favorites list is currently empty!')">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Favorites</span>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://i.pravatar.cc/150?img=12" alt="Avatar" class="profile-avatar">
+                    <div class="profile-info">
+                        <span class="profile-name" id="userNameDisplay">Vaibhav</span>
+                        <span class="profile-role">Student</span>
+                    </div>
+                </div>
+                <button onclick="logout()" class="btn-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard View -->
+        <main class="main-content">
+            <!-- Header/Topbar -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search colleges, branches, cutoffs, scholarships...">
+                </div>
+                
+                <div class="topbar-actions">
+                    <button class="icon-btn tooltip" data-tooltip="Notifications">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="badge"></span>
+                    </button>
+                    
+                    <button id="theme-toggle" class="theme-toggle-btn tooltip" data-tooltip="Toggle Theme">
+                        <i class="fa-solid fa-moon moon-icon"></i>
+                        <i class="fa-solid fa-sun sun-icon"></i>
+                    </button>
+                    
+                    <div class="profile-dropdown-trigger">
+                        <img src="https://i.pravatar.cc/150?img=12" alt="Avatar" class="avatar-topbar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Scrollable Section -->
+            <div class="content-scroll">
+                <!-- Welcome/Hero Banner -->
+                <section class="hero-banner">
+                    <div class="hero-left">
+                        <span class="tagline">Interactive Guidance Portal</span>
+                        <h1 class="welcome-title">Good Evening, <span id="welcomeName">Vaibhav</span> 👋</h1>
+                        <p class="welcome-desc">Find your dream engineering college and shape your tech career with real-time statistics, cutoff models, and placement charts.</p>
+                        <button class="btn-hero" onclick="window.location.href='predictor.html'">
+                            <span>Get Recommendations</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="hero-right">
+                        <img src="../assets/hero_student.png" alt="Student Studying" class="hero-student-img">
+                    </div>
+                </section>
+
+                <!-- Statistics Grid -->
+                <section class="stats-grid">
+                    <div class="stat-card blue-glow">
+                        <div class="stat-header">
+                            <i class="fa-solid fa-building-columns stat-icon"></i>
+                            <span class="stat-growth">+12% new</span>
+                        </div>
+                        <h2 class="stat-number">15,000+</h2>
+                        <p class="stat-label">Colleges Indexed</p>
+                    </div>
+                    <div class="stat-card cyan-glow">
+                        <div class="stat-header">
+                            <i class="fa-solid fa-code-branch stat-icon"></i>
+                            <span class="stat-growth">All streams</span>
+                        </div>
+                        <h2 class="stat-number">300+</h2>
+                        <p class="stat-label">Engineering Branches</p>
+                    </div>
+                    <div class="stat-card purple-glow">
+                        <div class="stat-header">
+                            <i class="fa-solid fa-trophy stat-icon"></i>
+                            <span class="stat-growth">₹50Cr+ fund</span>
+                        </div>
+                        <h2 class="stat-number">500+</h2>
+                        <p class="stat-label">Active Scholarships</p>
+                    </div>
+                    <div class="stat-card amber-glow">
+                        <div class="stat-header">
+                            <i class="fa-solid fa-chart-line stat-icon"></i>
+                            <span class="stat-growth">LPA stats</span>
+                        </div>
+                        <h2 class="stat-number">50,000+</h2>
+                        <p class="stat-label">Placement Data Rows</p>
+                    </div>
+                </section>
+
+                <!-- Section: Explore Features -->
+                <section class="features-section">
+                    <div class="section-header">
+                        <h2>Explore Services</h2>
+                        <p>Analyze and secure your ideal education path</p>
+                    </div>
+
+                    <div class="features-grid">
+                        <!-- Card: Top Colleges -->
+                        <div class="feature-card">
+                            <div class="feature-card-content">
+                                <div class="icon-wrapper blue">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <h3>Top Colleges</h3>
+                                <p>Explore campus reviews, average package details, and NIRF rankings for major national institutes.</p>
+                                <div class="colleges-quick-peek">
+                                    <span class="peek-badge">IIT Bombay (Rank #1)</span>
+                                    <span class="peek-badge">IIT Delhi (Rank #2)</span>
+                                </div>
+                            </div>
+                            <button class="feature-card-btn" onclick="window.location.href='colleges.html'">
+                                <span>Explore Colleges</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Card: AI Predictor -->
+                        <div class="feature-card">
+                            <div class="feature-card-content">
+                                <div class="icon-wrapper green">
+                                    <i class="fa-solid fa-brain"></i>
+                                </div>
+                                <h3>AI Career Predictor</h3>
+                                <p>Provide your exam ranks and preferences to receive high-accuracy branch and campus matches.</p>
+                                <div class="colleges-quick-peek">
+                                    <span class="peek-badge"><i class="fa-solid fa-bolt"></i> Fast Match</span>
+                                    <span class="peek-badge">Cutoff Analysis</span>
+                                </div>
+                            </div>
+                            <button class="feature-card-btn" onclick="window.location.href='predictor.html'">
+                                <span>Predict Career</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Card: Placements -->
+                        <div class="feature-card">
+                            <div class="feature-card-content">
+                                <div class="icon-wrapper purple">
+                                    <i class="fa-solid fa-chart-pie"></i>
+                                </div>
+                                <h3>Placement Analytics</h3>
+                                <p>Interact with historical package comparisons, high recruit sectors, and placement charts.</p>
+                                <div class="colleges-quick-peek">
+                                    <span class="peek-badge">₹56 LPA Max</span>
+                                    <span class="peek-badge">96% Placement Rate</span>
+                                </div>
+                            </div>
+                            <button class="feature-card-btn" onclick="window.location.href='placements.html'">
+                                <span>View Charts</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <!-- Card: Scholarships -->
+                        <div class="feature-card">
+                            <div class="feature-card-content">
+                                <div class="icon-wrapper amber">
+                                    <i class="fa-solid fa-award"></i>
+                                </div>
+                                <h3>Scholarships</h3>
+                                <p>Discover Central, State, and corporate funding programs that match your score and stream.</p>
+                                <div class="colleges-quick-peek">
+                                    <span class="peek-badge">Up to ₹50,000</span>
+                                    <span class="peek-badge">Girls Support</span>
+                                </div>
+                            </div>
+                            <button class="feature-card-btn" onclick="window.location.href='scholarships.html'">
+                                <span>Apply Now</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
 </body>
-
 </html>
-

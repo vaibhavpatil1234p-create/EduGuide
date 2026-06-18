@@ -1,161 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Career Predictor</title>
-
-<link rel="stylesheet"
-href="../css/predictor.css">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<link
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGuide - AI Career Predictor</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/predictor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-<div class="container">
-
-<h1>
-
-🧠 AI Career Predictor
-
-</h1>
-
-<p>
-
-Find the Best Branch and College for Your Future
-
-</p>
-
-<div class="card">
-
-<select id="stream">
-
-<option>PCM</option>
-
-<option>PCB</option>
-
-<option>Commerce</option>
-
-</select>
-
-
-<select id="class">
-
-<option>After 10th</option>
-
-<option>11th</option>
-
-<option>12th</option>
-
-</select>
-
-<select id="exam">
-
-<option>JEE Main</option>
-<option>KCET</option>
-<option>COMEDK</option>
-
-</select>
-
-<input
-type="number"
-id="rank"
-placeholder="Enter JEE/KCET/COMEDK Rank">
-
-
-<input
-type="number"
-id="budget"
-placeholder="Budget (Lakhs)">
-
-
-<input
-type="text"
-id="state"
-placeholder="Preferred State">
-
-
-<input
-type="text"
-id="interest"
-placeholder="Interest Area">
-
-
-<button onclick="predictCareer()">
-
-Generate Recommendation
-
-</button>
-
-</div>
-
-
-
-<div class="result">
-
-<h2>
-
-Recommended Branch
-
-</h2>
-
-<h1 id="branch">
-
-AI & ML
-
-</h1>
-
-
-<h2>
-
-Recommended Colleges
-
-</h2>
-
-<p id="college">
-
-IIT Bombay
-
-<br>
-
-BITS Pilani
-
-<br>
-
-IIIT Hyderabad
-
-</p>
-
-
-<h2>
-
-Average Package
-
-</h2>
-
-<h1 id="package">
-
-₹22 LPA
-
-</h1>
-
-</div>
-
-<script src="../js/predictor.js"></script>
-
+    <div class="app-container">
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <button id="sidebar-toggle" class="sidebar-toggle-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="mobile-brand">
+                <i class="fa-solid fa-graduation-cap brand-logo"></i>
+                <span>EduGuide</span>
+            </div>
+            <img src="https://i.pravatar.cc/150?img=12" class="avatar-mobile" alt="Profile">
+        </div>
+
+        <!-- Sidebar Navigation (Consistent) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-graduation-cap logo-icon"></i>
+                <span class="logo-text">EduGuide</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li onclick="window.location.href='dashboard.html'">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li onclick="window.location.href='colleges.html'">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span>Top Colleges</span>
+                    </li>
+                    <li class="active" onclick="window.location.href='predictor.html'">
+                        <i class="fa-solid fa-brain"></i>
+                        <span>Career Predictor</span>
+                    </li>
+                    <li onclick="window.location.href='placements.html'">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <span>Placements</span>
+                    </li>
+                    <li onclick="window.location.href='scholarships.html'">
+                        <i class="fa-solid fa-trophy"></i>
+                        <span>Scholarships</span>
+                    </li>
+                    <li onclick="alert('AI Counsellor chatbot coming soon!')">
+                        <i class="fa-solid fa-robot"></i>
+                        <span>AI Counsellor</span>
+                    </li>
+                    <li onclick="alert('Your favorites list is currently empty!')">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Favorites</span>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://i.pravatar.cc/150?img=12" alt="Avatar" class="profile-avatar">
+                    <div class="profile-info">
+                        <span class="profile-name" id="userNameDisplay">Vaibhav</span>
+                        <span class="profile-role">Student</span>
+                    </div>
+                </div>
+                <button onclick="logout()" class="btn-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header/Topbar (Consistent) -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search colleges, branches, exams...">
+                </div>
+                
+                <div class="topbar-actions">
+                    <button class="icon-btn tooltip" data-tooltip="Notifications">
+                        <i class="fa-solid fa-bell"></i>
+                    </button>
+                    
+                    <button id="theme-toggle" class="theme-toggle-btn tooltip" data-tooltip="Toggle Theme">
+                        <i class="fa-solid fa-moon moon-icon"></i>
+                        <i class="fa-solid fa-sun sun-icon"></i>
+                    </button>
+                    
+                    <img src="https://i.pravatar.cc/150?img=12" alt="Avatar" class="avatar-topbar">
+                </div>
+            </header>
+
+            <div class="content-scroll">
+                <!-- Title banner -->
+                <section class="page-title-section">
+                    <h1>🧠 AI Career & College Predictor</h1>
+                    <p>Provide your exam ranks and academic preferences to predict your ideal branch and recommended colleges.</p>
+                </section>
+
+                <div class="predictor-wrapper">
+                    <!-- INPUT FORM CONTAINER -->
+                    <div class="predictor-card">
+                        <div class="predictor-header">
+                            <h2>Academic Input Profile</h2>
+                            <p>Fill out details to trigger prediction algorithms</p>
+                        </div>
+                        
+                        <form onsubmit="event.preventDefault(); triggerPrediction();" class="predictor-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="stream">Academic Stream</label>
+                                    <div class="select-wrapper">
+                                        <select id="stream" required>
+                                            <option value="PCM">PCM (Engineering)</option>
+                                            <option value="PCB">PCB (Medical/Biotech)</option>
+                                            <option value="Commerce">Commerce</option>
+                                        </select>
+                                        <i class="fa-solid fa-chevron-down select-arrow"></i>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="class">Current Class State</label>
+                                    <div class="select-wrapper">
+                                        <select id="class" required>
+                                            <option value="After 10th">After 10th</option>
+                                            <option value="11th">Class 11th</option>
+                                            <option value="12th" selected>Class 12th / Passed</option>
+                                        </select>
+                                        <i class="fa-solid fa-chevron-down select-arrow"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="exam">Target Entrance Exam</label>
+                                    <div class="select-wrapper">
+                                        <select id="exam" onchange="adjustRankPlaceholder()" required>
+                                            <option value="JEE Main">JEE Main</option>
+                                            <option value="KCET">KCET (Karnataka)</option>
+                                            <option value="COMEDK">COMEDK</option>
+                                        </select>
+                                        <i class="fa-solid fa-chevron-down select-arrow"></i>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="rank">Exam Rank / Score</label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="rank" placeholder="Enter JEE Main Rank" min="1" max="1000000" required>
+                                        <i class="fa-solid fa-hashtag input-icon-inner"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="budget">Annual Budget Cap (Lakhs INR)</label>
+                                    <div class="input-wrapper">
+                                        <input type="number" id="budget" placeholder="Budget (e.g. 4)" min="1" max="50" required>
+                                        <i class="fa-solid fa-indian-rupee-sign input-icon-inner"></i>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="state">Preferred Location (State)</label>
+                                    <div class="select-wrapper">
+                                        <select id="state" required>
+                                            <option value="All">All India</option>
+                                            <option value="Karnataka">Karnataka</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                            <option value="Delhi">Delhi</option>
+                                            <option value="Telangana">Telangana</option>
+                                        </select>
+                                        <i class="fa-solid fa-chevron-down select-arrow"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="interest">Core Interest Area</label>
+                                <div class="select-wrapper">
+                                    <select id="interest" required>
+                                        <option value="AI & ML">Artificial Intelligence & Data Systems</option>
+                                        <option value="Software Development">Software Engineering & Web Systems</option>
+                                        <option value="Cybersecurity">Cybersecurity & Networks</option>
+                                        <option value="Robotics">Robotics & Hardware Systems</option>
+                                        <option value="Biotech">Biotech & Genetics</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down select-arrow"></i>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-predict" id="predictBtn">
+                                <span>Generate Recommendation</span>
+                                <i class="fa-solid fa-gears"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- OUTPUT RESULT CONTAINER -->
+                    <div class="result-container" id="resultContainer">
+                        <!-- Loading State (Toggled by JS) -->
+                        <div class="loading-state" id="loadingState">
+                            <div class="spinner-box">
+                                <div class="circle-spinner"></div>
+                            </div>
+                            <h3>Analyzing Profile Metrics</h3>
+                            <p>Correlating cutoff tables, placement statistics, and interest weights...</p>
+                        </div>
+
+                        <!-- Empty State (Shown initially) -->
+                        <div class="empty-state" id="emptyState">
+                            <i class="fa-solid fa-brain-circuit brain-glow-icon"></i>
+                            <h3>Awaiting Academic Profile</h3>
+                            <p>Submit your exam scores and location preferences in the form to generate AI recommendations.</p>
+                        </div>
+
+                        <!-- Results State (Toggled by JS) -->
+                        <div class="results-state" id="resultsState">
+                            <div class="result-header">
+                                <span class="badge-glow">Recommended Match</span>
+                                <h1 id="resBranch">Computer Science</h1>
+                                <p>Optimal branch matching interest and cutoff curves</p>
+                            </div>
+
+                            <div class="result-card-inner">
+                                <h3>Matched Campus Options</h3>
+                                <div class="campus-list" id="resColleges">
+                                    <!-- Populated dynamically -->
+                                </div>
+                            </div>
+
+                            <div class="result-stats-row">
+                                <div class="res-stat-card">
+                                    <span class="res-stat-title">Avg Package</span>
+                                    <h2 id="resPackage">₹22 LPA</h2>
+                                </div>
+                                <div class="res-stat-card">
+                                    <span class="res-stat-title">Confidence</span>
+                                    <h2 id="resConfidence">94%</h2>
+                                </div>
+                            </div>
+
+                            <div class="result-card-inner">
+                                <h3>Career Horizon & Placement Trend</h3>
+                                <p id="resOverview" class="career-desc"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/predictor.js"></script>
 </body>
-
 </html>
-

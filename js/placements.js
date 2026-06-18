@@ -1,282 +1,113 @@
-// ================= PACKAGE GRAPH =================
+document.addEventListener('DOMContentLoaded', () => {
+    // Determine theme status to adjust text colors in Chart.js
+    const isLight = document.body.classList.contains('light-mode');
+    const textColor = isLight ? '#0f172a' : '#f8fafc';
+    const gridColor = isLight ? '#e2e8f0' : 'rgba(255, 255, 255, 0.05)';
 
-const packageCtx = document.getElementById("packageChart");
+    // --- CHART 1: BRANCH-WISE AVERAGE PACKAGE (BAR CHART) ---
+    const ctx1 = document.getElementById('packageChart');
+    if (ctx1) {
+        // Create gradients
+        const gradient = ctx1.getContext('2d').createLinearGradient(0, 0, 0, 300);
+        gradient.addColorStop(0, '#3b82f6'); // Electric blue
+        gradient.addColorStop(1, '#a855f7'); // Purple
 
-new Chart(packageCtx, {
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['CSE', 'AI & ML', 'ISE/IT', 'ECE', 'EEE', 'Mech', 'Civil'],
+                datasets: [{
+                    label: 'Average Package (LPA)',
+                    data: [26, 28, 22, 17, 12, 9, 7],
+                    backgroundColor: gradient,
+                    borderRadius: 8,
+                    borderWidth: 0,
+                    barPercentage: 0.6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: textColor, font: { family: 'Plus Jakarta Sans', size: 11 } }
+                    },
+                    y: {
+                        grid: { color: gridColor },
+                        ticks: { color: textColor, font: { family: 'Plus Jakarta Sans', size: 11 } },
+                        border: { dash: [4, 4] }
+                    }
+                }
+            }
+        });
+    }
 
-type: "bar",
+    // --- CHART 2: YEAR-WISE COMPARISON (LINE CHART) ---
+    const ctx2 = document.getElementById('yearChart');
+    if (ctx2) {
+        new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['2022', '2023', '2024', '2025', '2026'],
+                datasets: [
+                    {
+                        label: 'Highest Package',
+                        data: [42, 45, 48, 52, 56],
+                        borderColor: '#10b981', // Success Green
+                        backgroundColor: 'transparent',
+                        tension: 0.3,
+                        pointRadius: 4,
+                        pointBackgroundColor: '#10b981'
+                    },
+                    {
+                        label: 'Average Package',
+                        data: [16, 17.5, 19, 20.5, 22],
+                        borderColor: '#3b82f6', // Primary Blue
+                        backgroundColor: 'transparent',
+                        tension: 0.3,
+                        pointRadius: 4,
+                        pointBackgroundColor: '#3b82f6'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { color: textColor, font: { family: 'Plus Jakarta Sans', size: 11 } }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: textColor, font: { family: 'Plus Jakarta Sans', size: 11 } }
+                    },
+                    y: {
+                        grid: { color: gridColor },
+                        ticks: { color: textColor, font: { family: 'Plus Jakarta Sans', size: 11 } },
+                        border: { dash: [4, 4] }
+                    }
+                }
+            }
+        });
+    }
 
-data: {
-
-labels: [
-
-"AI & ML",
-"CSE",
-"Cyber Security",
-"Data Science",
-"ISE",
-"ECE",
-"EEE",
-"Mechanical",
-"Civil",
-"Chemical",
-"Biotechnology"
-
-],
-
-datasets: [{
-
-label: "Average Package (LPA)",
-
-data: [
-
-22,
-20,
-18,
-21,
-19,
-14,
-12,
-11,
-9,
-10,
-13
-
-],
-
-backgroundColor: [
-
-"#2563eb",
-"#3b82f6",
-"#06b6d4",
-"#14b8a6",
-"#22c55e",
-"#facc15",
-"#f97316",
-"#ef4444",
-"#ec4899",
-"#8b5cf6",
-"#6366f1"
-
-],
-
-borderRadius: 10,
-
-borderWidth: 1
-
-}]
-
-},
-
-options: {
-
-responsive: true,
-
-plugins: {
-
-legend: {
-
-labels: {
-
-color: "white"
-
-}
-
-}
-
-},
-
-scales: {
-
-x: {
-
-ticks: {
-
-color: "white"
-
-}
-
-},
-
-y: {
-
-beginAtZero: true,
-
-ticks: {
-
-color: "white"
-
-}
-
-}
-
-}
-
-}
-
+    // Adapt chart styling when theme is toggled dynamically
+    const themeBtn = document.getElementById('theme-toggle');
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            // Wait brief moment for class list to toggle in body
+            setTimeout(() => {
+                window.location.reload(); // Quick reset of canvas scales
+            }, 100);
+        });
+    }
 });
-
-
-
-// ================= YEAR GRAPH =================
-
-const yearCtx = document.getElementById("yearChart");
-
-new Chart(yearCtx, {
-
-type: "line",
-
-data: {
-
-labels: [
-
-"2022",
-"2023",
-"2024"
-
-],
-
-datasets: [
-
-{
-
-label: "AI & ML",
-
-data: [
-
-16,
-19,
-22
-
-],
-
-borderColor: "#3b82f6",
-
-tension: .4
-
-},
-
-{
-
-label: "CSE",
-
-data: [
-
-15,
-18,
-20
-
-],
-
-borderColor: "#22c55e",
-
-tension: .4
-
-},
-
-{
-
-label: "Cyber Security",
-
-data: [
-
-12,
-15,
-18
-
-],
-
-borderColor: "#ef4444",
-
-tension: .4
-
-},
-
-{
-
-label: "Data Science",
-
-data: [
-
-14,
-17,
-21
-
-],
-
-borderColor: "#f97316",
-
-tension: .4
-
-},
-
-{
-
-label: "ECE",
-
-data: [
-
-10,
-12,
-14
-
-],
-
-borderColor: "#eab308",
-
-tension: .4
-
-}
-
-]
-
-},
-
-options: {
-
-responsive: true,
-
-plugins: {
-
-legend: {
-
-labels: {
-
-color: "white"
-
-}
-
-}
-
-},
-
-scales: {
-
-x: {
-
-ticks: {
-
-color: "white"
-
-}
-
-},
-
-y: {
-
-beginAtZero: true,
-
-ticks: {
-
-color: "white"
-
-}
-
-}
-
-}
-
-}
-
-});
-

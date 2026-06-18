@@ -1,248 +1,516 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Top Colleges</title>
-
-<link rel="stylesheet"
-href="../css/colleges.css">
-
-<link rel="stylesheet"
-href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduGuide - Top Colleges</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/colleges.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-<div class="container">
-
-<h1>
-
-🎓 Top Engineering Colleges
-
-</h1>
-
-<div class="cards">
-
-<!-- IIT Bombay -->
-<div class="card">
-
-<img src="https://images.shiksha.com/mediadata/images/1532585583php4VfQ5N.jpeg">
-
-<h2>IIT Bombay</h2>
-
-<p>
-
-⭐ NIRF Rank #1
-
-<br>
-
-💰 Avg Package ₹36 LPA
-
-<br>
-
-📍 Mumbai
-
-</p>
-
-<button>View Details</button>
-
-</div>
-
-
-
-<!-- IIT Delhi -->
-<div class="card">
-
-<img src="https://images.shiksha.com/mediadata/images/1534158348php4SqQW6.jpeg">
-
-<h2>IIT Delhi</h2>
-
-<p>
-
-⭐ NIRF Rank #2
-
-<br>
-
-💰 Avg Package ₹34 LPA
-
-<br>
-
-📍 Delhi
-
-</p>
-
-<button>View Details</button>
-
-</div>
-
-
-
-<!-- BITS Pilani -->
-<div class="card">
-
-<img src="https://images.shiksha.com/mediadata/images/1536577745php6KJf5L.jpeg">
-
-<h2>BITS Pilani</h2>
-
-<p>
-
-⭐ Top Private Institute
-
-<br>
-
-💰 Avg Package ₹30 LPA
-
-<br>
-
-📍 Rajasthan
-
-</p>
-
-<button>View Details</button>
-
-</div>
-
-
-
-<!-- IIIT Hyderabad -->
-<div class="card">
-
-<img src="https://images.shiksha.com/mediadata/images/1537448166phpbA4qkB.jpeg">
-
-<h2>IIIT Hyderabad</h2>
-
-<p>
-
-⭐ Research Excellence
-
-<br>
-
-💰 Avg Package ₹32 LPA
-
-<br>
-
-📍 Hyderabad
-
-</p>
-
-<button>View Details</button>
-
-</div>
-
-
-
-<!-- RVCE -->
-<div class="card">
-
-<img src="https://rvce.edu.in/sites/default/files/styles/large/public/2022-09/campus.jpg">
-
-<h2>RVCE</h2>
-
-<p>
-
-⭐ Karnataka Top College
-
-<br>
-
-💰 Avg Package ₹18 LPA
-
-<br>
-
-📍 Bangalore
-
-</p>
-
-<button>View Details</button>
-
-</div>
-
-
-
-<!-- MSRIT -->
-<div class="card">
-
-<img src="https://www.msrit.edu/assets/images/about/campus.jpg">
-
-<h2>MSRIT</h2>
-
-<p>
-
-⭐ Autonomous Institute
-
-<br>
-
-💰 Avg Package ₹15 LPA
-
-<br>
-
-📍 Bangalore
-
-</p>
-
-<button>View Details</button>
-
-</div>
-
-
-
-<!-- PES University -->
-<div class="card">
-
-<img src="https://www.pes.edu/wp-content/uploads/2022/06/pes-campus.jpg">
-
-<h2>PES University</h2>
-
-<p>
-
-⭐ Top Private University
-
-<br>
-
-💰 Avg Package ₹17 LPA
-
-<br>
-
-📍 Bangalore
-
-</p>
-
-<button>View Details</button>
-
-</div>
-
-
-
-<!-- BMSCE -->
-<div class="card">
-
-<img src="https://bmsce.ac.in/assets/img/about/campus.jpg">
-
-<h2>BMS College of Engineering</h2>
-
-<p>
-
-⭐ Autonomous Institute
-
-<br>
-
-💰 Avg Package ₹14 LPA
-
-<br>
-
-📍 Bangalore
-
-</p>
-
-<button>View Details</button>
-
-</div>
-
-</div>
-
+    <div class="app-container">
+        <!-- Mobile Header -->
+        <div class="mobile-header">
+            <button id="sidebar-toggle" class="sidebar-toggle-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="mobile-brand">
+                <i class="fa-solid fa-graduation-cap brand-logo"></i>
+                <span>EduGuide</span>
+            </div>
+            <img src="https://i.pravatar.cc/150?img=12" class="avatar-mobile" alt="Profile">
+        </div>
+
+        <!-- Sidebar Navigation (Consistent with Dashboard) -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-graduation-cap logo-icon"></i>
+                <span class="logo-text">EduGuide</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li onclick="window.location.href='dashboard.html'">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Dashboard</span>
+                    </li>
+                    <li class="active" onclick="window.location.href='colleges.html'">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span>Top Colleges</span>
+                    </li>
+                    <li onclick="window.location.href='predictor.html'">
+                        <i class="fa-solid fa-brain"></i>
+                        <span>Career Predictor</span>
+                    </li>
+                    <li onclick="window.location.href='placements.html'">
+                        <i class="fa-solid fa-briefcase"></i>
+                        <span>Placements</span>
+                    </li>
+                    <li onclick="window.location.href='scholarships.html'">
+                        <i class="fa-solid fa-trophy"></i>
+                        <span>Scholarships</span>
+                    </li>
+                    <li onclick="alert('AI Counsellor chatbot coming soon!')">
+                        <i class="fa-solid fa-robot"></i>
+                        <span>AI Counsellor</span>
+                    </li>
+                    <li onclick="alert('Your favorites list is currently empty!')">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>Favorites</span>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <img src="https://i.pravatar.cc/150?img=12" alt="Avatar" class="profile-avatar">
+                    <div class="profile-info">
+                        <span class="profile-name" id="userNameDisplay">Vaibhav</span>
+                        <span class="profile-role">Student</span>
+                    </div>
+                </div>
+                <button onclick="logout()" class="btn-logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header/Topbar (Consistent) -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="collegeSearch" placeholder="Search colleges by name, city, rank..." oninput="filterColleges()">
+                </div>
+                
+                <div class="topbar-actions">
+                    <button class="icon-btn tooltip" data-tooltip="Notifications">
+                        <i class="fa-solid fa-bell"></i>
+                    </button>
+                    
+                    <button id="theme-toggle" class="theme-toggle-btn tooltip" data-tooltip="Toggle Theme">
+                        <i class="fa-solid fa-moon moon-icon"></i>
+                        <i class="fa-solid fa-sun sun-icon"></i>
+                    </button>
+                    
+                    <img src="https://i.pravatar.cc/150?img=12" alt="Avatar" class="avatar-topbar">
+                </div>
+            </header>
+
+            <div class="content-scroll">
+                <!-- Banner -->
+                <section class="page-title-section">
+                    <h1>🎓 Top Engineering Colleges</h1>
+                    <p>Compare rankings, placements, and campus profiles of leading institutions.</p>
+                </section>
+
+                <!-- College Cards Grid -->
+                <section class="colleges-grid" id="collegesGrid">
+                    <!-- IIT Bombay -->
+                    <div class="college-card" data-name="IIT Bombay" data-city="Mumbai">
+                        <div class="college-img-box">
+                            <img src="../assets/iit_bombay.png" alt="IIT Bombay Campus" class="college-image">
+                            <span class="rank-tag">#1 NIRF</span>
+                        </div>
+                        <div class="college-info">
+                            <h3>IIT Bombay</h3>
+                            <div class="college-meta">
+                                <span class="meta-item"><i class="fa-solid fa-briefcase"></i> ₹36 LPA Avg</span>
+                                <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Mumbai</span>
+                            </div>
+                            <p class="college-brief">The premier national institute leading in technical education, research, and placement statistics.</p>
+                            <button class="btn-details" onclick="openDetails('iit_bombay')">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- IIT Delhi -->
+                    <div class="college-card" data-name="IIT Delhi" data-city="Delhi">
+                        <div class="college-img-box">
+                            <img src="../assets/iit_delhi.png" alt="IIT Delhi Campus" class="college-image">
+                            <span class="rank-tag">#2 NIRF</span>
+                        </div>
+                        <div class="college-info">
+                            <h3>IIT Delhi</h3>
+                            <div class="college-meta">
+                                <span class="meta-item"><i class="fa-solid fa-briefcase"></i> ₹34 LPA Avg</span>
+                                <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Delhi</span>
+                            </div>
+                            <p class="college-brief">Renowned for its research excellence, industry tie-ups, and a vibrant entrepreneurial ecosystem.</p>
+                            <button class="btn-details" onclick="openDetails('iit_delhi')">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- BITS Pilani -->
+                    <div class="college-card" data-name="BITS Pilani" data-city="Rajasthan">
+                        <div class="college-img-box">
+                            <img src="../assets/bits_pilani.png" alt="BITS Pilani Campus" class="college-image">
+                            <span class="rank-tag">#1 Private</span>
+                        </div>
+                        <div class="college-info">
+                            <h3>BITS Pilani</h3>
+                            <div class="college-meta">
+                                <span class="meta-item"><i class="fa-solid fa-briefcase"></i> ₹30 LPA Avg</span>
+                                <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Rajasthan</span>
+                            </div>
+                            <p class="college-brief">India's leading private science and technology university, famous for its no-attendance-policy culture.</p>
+                            <button class="btn-details" onclick="openDetails('bits_pilani')">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- IIIT Hyderabad -->
+                    <div class="college-card" data-name="IIIT Hyderabad" data-city="Hyderabad">
+                        <div class="college-img-box">
+                            <img src="../assets/iiit_hyderabad.png" alt="IIIT Hyderabad Campus" class="college-image">
+                            <span class="rank-tag">Research Elite</span>
+                        </div>
+                        <div class="college-info">
+                            <h3>IIIT Hyderabad</h3>
+                            <div class="college-meta">
+                                <span class="meta-item"><i class="fa-solid fa-briefcase"></i> ₹32 LPA Avg</span>
+                                <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Hyderabad</span>
+                            </div>
+                            <p class="college-brief">A top tier autonomous research university specialized in Computer Science, AI, and Robotics.</p>
+                            <button class="btn-details" onclick="openDetails('iiit_hyderabad')">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- RVCE -->
+                    <div class="college-card" data-name="RVCE" data-city="Bangalore">
+                        <div class="college-img-box">
+                            <img src="../assets/rvce.png" alt="RVCE Campus" class="college-image">
+                            <span class="rank-tag">State Top #1</span>
+                        </div>
+                        <div class="college-info">
+                            <h3>RVCE Bangalore</h3>
+                            <div class="college-meta">
+                                <span class="meta-item"><i class="fa-solid fa-briefcase"></i> ₹18 LPA Avg</span>
+                                <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Bangalore</span>
+                            </div>
+                            <p class="college-brief">RV College of Engineering is highly sought-after for computer streams with outstanding local placement records.</p>
+                            <button class="btn-details" onclick="openDetails('rvce')">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- MSRIT -->
+                    <div class="college-card" data-name="MSRIT" data-city="Bangalore">
+                        <div class="college-img-box">
+                            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=600&auto=format&fit=crop" alt="MSRIT Campus" class="college-image">
+                            <span class="rank-tag">Autonomous</span>
+                        </div>
+                        <div class="college-info">
+                            <h3>MSRIT Bangalore</h3>
+                            <div class="college-meta">
+                                <span class="meta-item"><i class="fa-solid fa-briefcase"></i> ₹15 LPA Avg</span>
+                                <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Bangalore</span>
+                            </div>
+                            <p class="college-brief">Ramaiah Institute of Technology offers top tier infrastructure, global collaborations, and tech labs.</p>
+                            <button class="btn-details" onclick="openDetails('msrit')">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- PES University -->
+                    <div class="college-card" data-name="PES University" data-city="Bangalore">
+                        <div class="college-img-box">
+                            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop" alt="PES University Campus" class="college-image">
+                            <span class="rank-tag">Top Private</span>
+                        </div>
+                        <div class="college-info">
+                            <h3>PES University</h3>
+                            <div class="college-meta">
+                                <span class="meta-item"><i class="fa-solid fa-briefcase"></i> ₹17 LPA Avg</span>
+                                <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Bangalore</span>
+                            </div>
+                            <p class="college-brief">Highly structured syllabus with key placements in product engineering firms and software houses.</p>
+                            <button class="btn-details" onclick="openDetails('pes_university')">View Details</button>
+                        </div>
+                    </div>
+
+                    <!-- BMSCE -->
+                    <div class="college-card" data-name="BMSCE" data-city="Bangalore">
+                        <div class="college-img-box">
+                            <img src="https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=600&auto=format&fit=crop" alt="BMSCE Campus" class="college-image">
+                            <span class="rank-tag">Historic #1</span>
+                        </div>
+                        <div class="college-info">
+                            <h3>BMSCE Bangalore</h3>
+                            <div class="college-meta">
+                                <span class="meta-item"><i class="fa-solid fa-briefcase"></i> ₹14 LPA Avg</span>
+                                <span class="meta-item"><i class="fa-solid fa-location-dot"></i> Bangalore</span>
+                            </div>
+                            <p class="college-brief">B.M.S. College of Engineering is India's first private engineering college with rich heritage and alumni net.</p>
+                            <button class="btn-details" onclick="openDetails('bmsce')">View Details</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- College Details Modal -->
+    <div class="modal-overlay" id="detailsModal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeDetails()">&times;</button>
+            <div class="modal-hero">
+                <img id="modalHeroImg" src="" alt="College Header">
+                <div class="modal-hero-content">
+                    <span id="modalRank" class="modal-badge"></span>
+                    <h2 id="modalTitle">IIT Bombay</h2>
+                    <p id="modalLoc"><i class="fa-solid fa-location-dot"></i> Mumbai</p>
+                </div>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-section">
+                    <h3>About the Institution</h3>
+                    <p id="modalAbout"></p>
+                </div>
+
+                <div class="modal-stats-row">
+                    <div class="m-stat">
+                        <span class="m-stat-val" id="modalAvgPack">₹36 LPA</span>
+                        <span class="m-stat-lbl">Average Package</span>
+                    </div>
+                    <div class="m-stat">
+                        <span class="m-stat-val" id="modalMaxPack">₹1.4 Cr+</span>
+                        <span class="m-stat-lbl">Highest Package</span>
+                    </div>
+                    <div class="m-stat">
+                        <span class="m-stat-val" id="modalRate">98%</span>
+                        <span class="m-stat-lbl">Placement Rate</span>
+                    </div>
+                </div>
+
+                <div class="modal-split">
+                    <div class="m-split-col">
+                        <h3>Key Branches & Cutoffs (KCET/JEE)</h3>
+                        <ul class="modal-list" id="modalBranches">
+                            <!-- Populated dynamically -->
+                        </ul>
+                    </div>
+                    <div class="m-split-col">
+                        <h3>Top Recruiting Partners</h3>
+                        <div class="modal-tags" id="modalRecruiters">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/dashboard.js"></script>
+    <script>
+        // Modal College Data
+        const collegeData = {
+            iit_bombay: {
+                title: "IIT Bombay",
+                rank: "#1 NIRF",
+                location: "Mumbai, Maharashtra",
+                image: "../assets/iit_bombay.png",
+                avgPack: "₹36 LPA",
+                maxPack: "₹1.88 Crore",
+                rate: "98.2%",
+                about: "Indian Institute of Technology Bombay is the top-ranked public engineering institution in India, widely known for its computer science department, campus startup incubator, and high placement ratios.",
+                branches: [
+                    "Computer Science & Engineering: JEE Rank < 60",
+                    "Electrical Engineering: JEE Rank < 290",
+                    "Mechanical Engineering: JEE Rank < 1200",
+                    "Aerospace Engineering: JEE Rank < 2100"
+                ],
+                recruiters: ["Google", "Microsoft", "Qualcomm", "Texas Instruments", "Apple", "Uber"]
+            },
+            iit_delhi: {
+                title: "IIT Delhi",
+                rank: "#2 NIRF",
+                location: "Hauz Khas, New Delhi",
+                image: "../assets/iit_delhi.png",
+                avgPack: "₹34 LPA",
+                maxPack: "₹1.60 Crore",
+                rate: "97.5%",
+                about: "Indian Institute of Technology Delhi is a public research university located in Hauz Khas. The campus has nurtured prominent tech startup founders and is renowned globally for research index scores.",
+                branches: [
+                    "Computer Science & Engineering: JEE Rank < 100",
+                    "Mathematics & Computing: JEE Rank < 350",
+                    "Electrical Engineering: JEE Rank < 550",
+                    "Mechanical Engineering: JEE Rank < 1500"
+                ],
+                recruiters: ["Goldman Sachs", "Microsoft", "Intel", "NVIDIA", "Samsung Research", "Adobe"]
+            },
+            bits_pilani: {
+                title: "BITS Pilani",
+                rank: "#1 Private University",
+                location: "Pilani, Rajasthan",
+                image: "../assets/bits_pilani.png",
+                avgPack: "₹30 LPA",
+                maxPack: "₹1.20 Crore",
+                rate: "96.4%",
+                about: "Birla Institute of Technology and Science, Pilani is India's leading private university. It offers fully flexible credit systems and a popular dual-degree schema alongside its strict zero-attendance requirement.",
+                branches: [
+                    "Computer Science (Pilani): BITSAT Score > 320",
+                    "Electronics & Communication (Pilani): BITSAT Score > 295",
+                    "Electrical & Electronics: BITSAT Score > 270",
+                    "Mechanical Engineering: BITSAT Score > 220"
+                ],
+                recruiters: ["Amazon", "Uber", "Oracle", "Cisco", "Intel", "Walmart Global Tech"]
+            },
+            iiit_hyderabad: {
+                title: "IIIT Hyderabad",
+                rank: "Research Elite",
+                location: "Gachibowli, Hyderabad",
+                image: "../assets/iiit_hyderabad.png",
+                avgPack: "₹32 LPA",
+                maxPack: "₹1.02 Crore",
+                rate: "99.1%",
+                about: "International Institute of Information Technology Hyderabad is a premier autonomous university specializing in IT fields, widely acknowledged for code projects, GSoC participants, and elite research labs.",
+                branches: [
+                    "Computer Science & Engineering: JEE Rank < 800",
+                    "Electronics & Communication: JEE Rank < 2200"
+                ],
+                recruiters: ["Google", "Facebook", "Microsoft", "Salesforce", "Apple", "Adobe"]
+            },
+            rvce: {
+                title: "RVCE Bangalore",
+                rank: "State Top #1",
+                location: "Mysore Road, Bangalore",
+                image: "../assets/rvce.png",
+                avgPack: "₹18 LPA",
+                maxPack: "₹62 LPA",
+                rate: "95.0%",
+                about: "Rashtreeya Vidyalaya College of Engineering is a private technical co-educational college located in Bangalore. The college holds strong reputation across South India for its industrial research partnerships.",
+                branches: [
+                    "Computer Science & Engineering: KCET Rank < 120",
+                    "Information Science & Engineering: KCET Rank < 240",
+                    "Electronics & Communication: KCET Rank < 550",
+                    "Artificial Intelligence & Machine Learning: KCET Rank < 190"
+                ],
+                recruiters: ["Microsoft", "Cisco", "HP", "Infosys", "Deloitte", "Cognizant"]
+            },
+            msrit: {
+                title: "MSRIT Bangalore",
+                rank: "Autonomous",
+                location: "MSR Nagar, Bangalore",
+                image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=600&auto=format&fit=crop",
+                avgPack: "₹15 LPA",
+                maxPack: "₹50 LPA",
+                rate: "93.2%",
+                about: "M.S. Ramaiah Institute of Technology is an autonomous engineering college affiliated with VTU, known for its sprawling campus, extensive labs, and solid placement programs.",
+                branches: [
+                    "Computer Science & Engineering: KCET Rank < 320",
+                    "Information Science: KCET Rank < 580",
+                    "Electronics & Communication: KCET Rank < 980"
+                ],
+                recruiters: ["Amazon", "Target", "Capgemini", "Accenture", "L&T Infotech"]
+            },
+            pes_university: {
+                title: "PES University",
+                rank: "Top Private",
+                location: "Outer Ring Road, Bangalore",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop",
+                avgPack: "₹17 LPA",
+                maxPack: "₹65 LPA",
+                rate: "94.5%",
+                about: "PES University is one of the top private universities in Karnataka, placing huge emphasis on core technical skills, and holding large placement pools in the heart of Bangalore's IT hub.",
+                branches: [
+                    "Computer Science (RR Campus): KCET Rank < 280",
+                    "Electronics & Communication: KCET Rank < 780",
+                    "Artificial Intelligence: KCET Rank < 400"
+                ],
+                recruiters: ["Microsoft", "Intuit", "Cisco", "Akamai", "Siemens", "Robert Bosch"]
+            },
+            bmsce: {
+                title: "BMSCE Bangalore",
+                rank: "Historic #1",
+                location: "Bull Temple Road, Bangalore",
+                image: "https://images.unsplash.com/photo-1562774053-701939374585?q=80&w=600&auto=format&fit=crop",
+                avgPack: "₹14 LPA",
+                maxPack: "₹48 LPA",
+                rate: "92.8%",
+                about: "BMS College of Engineering is an autonomous college under VTU, standing historically as the first private engineering college in the country. It possesses a stellar placement cell and alumni net.",
+                branches: [
+                    "Computer Science & Engineering: KCET Rank < 290",
+                    "Information Science & Engineering: KCET Rank < 520",
+                    "Electronics & Communication: KCET Rank < 850"
+                ],
+                recruiters: ["TCS", "Wipro", "L&T", "Nokia", "Honeywell", "Bosch"]
+            }
+        };
+
+        // Open Modal Details
+        function openDetails(key) {
+            const data = collegeData[key];
+            if (!data) return;
+
+            document.getElementById('modalHeroImg').src = data.image;
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalRank').textContent = data.rank;
+            document.getElementById('modalLoc').innerHTML = `<i class="fa-solid fa-location-dot"></i> ${data.location}`;
+            document.getElementById('modalAbout').textContent = data.about;
+            document.getElementById('modalAvgPack').textContent = data.avgPack;
+            document.getElementById('modalMaxPack').textContent = data.maxPack;
+            document.getElementById('modalRate').textContent = data.rate;
+
+            // Populate Branches
+            const branchList = document.getElementById('modalBranches');
+            branchList.innerHTML = '';
+            data.branches.forEach(b => {
+                const li = document.createElement('li');
+                li.innerHTML = `<i class="fa-solid fa-chevron-right list-arrow"></i> ${b}`;
+                branchList.appendChild(li);
+            });
+
+            // Populate Recruiters
+            const recTags = document.getElementById('modalRecruiters');
+            recTags.innerHTML = '';
+            data.recruiters.forEach(r => {
+                const span = document.createElement('span');
+                span.className = 'modal-tag';
+                span.textContent = r;
+                recTags.appendChild(span);
+            });
+
+            // Show Modal
+            const modal = document.getElementById('detailsModal');
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('open');
+            }, 10);
+        }
+
+        // Close Modal Details
+        function closeDetails() {
+            const modal = document.getElementById('detailsModal');
+            modal.classList.remove('open');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // Close modal when clicking on overlay
+        document.getElementById('detailsModal').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('detailsModal')) {
+                closeDetails();
+            }
+        });
+
+        // Live Search Filter
+        function filterColleges() {
+            const query = document.getElementById('collegeSearch').value.toLowerCase();
+            const cards = document.querySelectorAll('.college-card');
+
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name').toLowerCase();
+                const city = card.getAttribute('data-city').toLowerCase();
+                if (name.includes(query) || city.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
